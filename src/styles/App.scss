@@ -3,9 +3,8 @@
 
 .container {
   width: 100%;
-  max-width: $breakpoint-xl;
-  padding: 0 16px;
- margin: 0 auto;
+  max-width: $breakpoint-xl !important;
+ margin: 0 auto !important;
 
   @media (max-width: $breakpoint-lg) {
     max-width: 960px;
@@ -17,7 +16,6 @@
 
   @media (max-width: $breakpoint-sm) {
     max-width: 100%;
-    padding: 0 12px;
   }
 }
 
