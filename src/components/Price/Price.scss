@@ -1,3 +1,4 @@
+// Price component styles
 .prs {
   background-color: #06294e;
   width: 100%;
@@ -12,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; // <-- адаптив үчүн
+    flex-wrap: wrap;
     gap: 20px;
     padding-top: 20px;
 
@@ -22,27 +23,33 @@
       align-items: flex-start;
       gap: 20px;
 
-      img {
+      .price-icon {
         width: 80px;
         height: 90px;
-        margin-top: 20px;
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .price-text {
         h2 {
-          font-family: Ubuntu;
+          font-family: 'Ubuntu', Helvetica;
           font-weight: 700;
           font-size: 24px;
           line-height: 1.3;
+          margin: 0 0 10px 0;
+          color: white;
         }
 
         p {
-          font-family: Open Sans;
+          font-family: 'Open Sans', Helvetica;
           font-weight: 400;
           font-size: 14px;
           line-height: 1.6;
           max-width: 100%;
+          margin: 0;
+          color: rgba(255, 255, 255, 0.8);
         }
       }
     }
@@ -52,135 +59,335 @@
       max-width: 100%;
 
       h3 {
-        font-family: Ubuntu;
+        font-family: 'Ubuntu', Helvetica;
         font-weight: 400;
         font-size: 16px;
         line-height: 1.3;
         margin-bottom: 10px;
-      }
-
-      h3::after {
-        content: "*";
-        color: #e94250;
-      }
-
-      input {
-        width: 48%;
-        height: 46px;
-        border-radius: 3px;
-        border: 1px solid #a9a9a9;
-        outline: none;
-        margin-bottom: 10px;
-      }
-
-      button {
-        width: 50%;
-        height: 48px;
-        border-radius: 3px;
-        border: none;
-        background-color: #e94250;
         color: white;
+
+        &::after {
+          content: "*";
+          color: #e94250;
+          margin-left: 4px;
+        }
       }
 
-      label {
+      .input-group {
         display: flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 10px;
+        gap: 0;
+        margin-bottom: 10px;
+
+        input {
+          flex: 1;
+          height: 46px;
+          border-radius: 3px 0 0 3px;
+          border: 1px solid #a9a9a9;
+          border-right: none;
+          outline: none;
+          padding: 0 15px;
+          font-family: 'Open Sans', Helvetica;
+          font-size: 14px;
+          background-color: white;
+          color: #333;
+
+          &::placeholder {
+            color: #999;
+          }
+
+          &:focus {
+            border-color: #e94250;
+            box-shadow: 0 0 0 2px rgba(233, 66, 80, 0.2);
+          }
+        }
+
+        button {
+          width: 140px;
+          height: 48px;
+          border-radius: 0 3px 3px 0;
+          border: none;
+          background-color: #e94250;
+          color: white;
+          font-family: 'Ubuntu', Helvetica;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: #d63545;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(233, 66, 80, 0.3);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 15px;
+        cursor: pointer;
+        font-family: 'Open Sans', Helvetica;
+        font-size: 14px;
+        line-height: 1.4;
 
         input[type="checkbox"] {
           width: 20px;
           height: 20px;
           outline: none;
+          cursor: pointer;
+          margin-top: 2px;
+          flex-shrink: 0;
+          accent-color: #e94250;
+        }
+
+        span {
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: underline;
+          text-decoration-color: rgba(255, 255, 255, 0.5);
         }
       }
     }
   }
 
-  // 📱 Мобилдик адаптация
-  // @media (max-width: 768px) {
-  //   .section-6 {
-  //     width: 100%;
-  //     margin: auto;
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: flex-start;
-  //     padding-top: 20px;
-
-  //   }
-
-  //   .price {
-  //     flex-direction: column;
-  //     align-items: center;
-  //     text-align: center;
-
-  //     img {
-  //       display: none;
-  //     }
-
-  //     .price-text {
-  //       padding-left: 0;
-  //     }
-  //   }
-
-  //   .price-inputs {
-  //    display: flex;
-  //    flex-direction: column;
-  //    transform: translateY(-70%);
-
-  //    input{
-  //     width: 100%;
-  //    }
-  //   }
-  // }
+  // 📱 Мобильная адаптация (до 768px)
   @media (max-width: 768px) {
-    .price img{
-      display: none;
+    padding: 30px 16px;
 
-      .price-text{
-      
-      }
-    }
-    .price-inputs {
-      display: flex;
+    .section-6 {
       flex-direction: column;
       align-items: center;
-      width: 100%;
-  
+      text-align: center;
+      gap: 30px;
+      padding-top: 0;
 
-      input {
-        width: 100% !important;
-        margin-bottom: 12px;
-      }
-  
-      // 📌 1. Кнопканы аягына түртүп
-      button {
-        order: 2; // Кнопканы эң аягына жылдырат
-        width: 100%;
-        margin-top: 12px;
-      }
-  
-      // 📌 2. Label’ди inputтан кийин, кнопкадан мурун чыгаруу
-      label {
-        order: 1; // Кнопканы кийин кылат
-        display: flex;
-        justify-content: center;
+      .price {
+        flex-direction: column;
         align-items: center;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 0;
-        font-size: 14px;
-  
-        input[type="checkbox"] {
-          width: 20px;
-          height: 20px;
+        text-align: center;
+        width: 100%;
+
+        .price-icon {
+          display: none;
         }
-  
-        span {
-          color: white;
+
+        .price-text {
+          h2 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 300px;
+          }
+        }
+      }
+
+      .price-inputs {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          font-size: 18px;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        .checkbox-label {
+          order: 1;
+          justify-content: center;
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 20px;
+          max-width: 350px;
+
+          input[type="checkbox"] {
+            margin-top: 0;
+            width: 18px;
+            height: 18px;
+          }
+
+          span {
+            font-size: 14px;
+            line-height: 1.4;
+          }
+        }
+
+        .input-group {
+          order: 2;
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          gap: 0;
+          justify-content: center;
+          align-items: stretch;
+
+          input {
+            flex: 1;
+            max-width: 250px;
+            height: 50px;
+            border-radius: 3px 0 0 3px;
+            border: 1px solid #a9a9a9;
+            border-right: none;
+            font-size: 16px;
+            padding: 0 15px;
+            background-color: white !important;
+            color: #333 !important;
+            font-family: 'Open Sans', Helvetica;
+            
+            &::placeholder {
+              color: #999 !important;
+            }
+
+            &:focus {
+              border-color: #e94250 !important;
+              box-shadow: 0 0 0 2px rgba(233, 66, 80, 0.2) !important;
+              outline: none !important;
+            }
+          }
+
+          button {
+            width: 120px;
+            height: 52px;
+            border-radius: 0 3px 3px 0;
+            font-size: 14px;
+            background-color: #e94250 !important;
+            color: white !important;
+            border: none !important;
+            font-family: 'Ubuntu', Helvetica;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
         }
       }
     }
   }
-  
+
+  // 📱 Планшетная адаптация (769px - 1024px)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .section-6 {
+      .price {
+        .price-text {
+          h2 {
+            font-size: 26px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .price-inputs {
+        .input-group {
+          input {
+            height: 48px;
+            font-size: 15px;
+          }
+
+          button {
+            width: 120px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  // 📱 Очень маленькие экраны (до 480px)
+  @media (max-width: 480px) {
+   
+    padding: 20px 12px;
+
+    .section-6 {
+      .price {
+        .price-text {
+          h2 {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 14px;
+            max-width: 280px;
+          }
+        }
+      }
+
+      .price-inputs {
+        margin-top: -54%;
+        max-width: 100%;
+
+
+        h3 {
+          margin-bottom: 15px;
+        }
+
+        .checkbox-label {
+          max-width: 100%;
+          margin-bottom: 25px;
+          
+          span {
+            font-size: 13px;
+          }
+        }
+
+        .input-group {
+          flex-direction: column;
+          gap: 15px;
+          width: 100%;
+
+          input {
+            width: 92% !important;
+            max-width: 100% !important;
+            height: 50px !important;
+            border-radius: 3px !important;
+            border: 1px solid #a9a9a9 !important;
+            font-size: 16px !important;
+            padding: 0 15px !important;
+            background-color: white !important;
+            color: #333 !important;
+            font-family: 'Open Sans', Helvetica !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            
+            &::placeholder {
+              color: #999 !important;
+            }
+
+            &:focus {
+              border-color: #e94250 !important;
+              box-shadow: 0 0 0 2px rgba(233, 66, 80, 0.2) !important;
+              outline: none !important;
+            }
+          }
+
+          button {
+            width: 100% !important;
+            height: 50px !important;
+            border-radius: 3px !important;
+            font-size: 16px !important;
+            background-color: #e94250 !important;
+            color: white !important;
+            border: none !important;
+            font-family: 'Ubuntu', Helvetica !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+          }
+        }
+      }
+    }
+  }
 }
