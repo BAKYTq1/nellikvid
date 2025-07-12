@@ -1,0 +1,32 @@
+.section-9 {
+
+  width: 100%;
+  background-color: #f9f9f9;
+margin-top: 4rem;
+  height: 170px;
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 auto;
+
+    img {
+      margin-top: 2.3rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+    .section-9{
+        width: 100%;
+        height: auto;
+
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+    }
+
+}
