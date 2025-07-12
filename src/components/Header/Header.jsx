@@ -1,10 +1,13 @@
 import React from 'react'
+import HeaderUP from './Header/HeaderUP'
+import Banner from './Banner/Banner.jsx'
 
 function Header() {
   return (
-    <div>
-      Header
-    </div>
+    <section>
+      <HeaderUP/>
+      <Banner/>
+    </section>
   )
 }
 
