@@ -17,16 +17,16 @@ import Review from "./components/Review/Review";
 function App() {
   return (
     <div className="">
-      <Header />
+      {/* <Header /> */}
       <Bestseller />
       <Manufacturers />
-       <Order/>
-       <Product/>
-       <Company/>
+      <Order />
+      <Product />
+      <Company />
       <Price />
       <Brand />
-      <Contact/>
-      <Questions/>
+      <Contact />
+      <Questions />
       <WorkSteps />
       <Review />
       <Footer />
