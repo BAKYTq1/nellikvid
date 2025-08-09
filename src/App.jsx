@@ -12,6 +12,8 @@ import { Product } from "./components/Product/Product";
 import { Company } from "./components/Company/Company";
 import Contact from "./components/Contact/Contact";
 import Questions from "./components/Questions/Questions";
+import WorkSteps from "./components/WorkSteps/WorkSteps";
+import Review from "./components/Review/Review";
 function App() {
   return (
     <div className="">
@@ -25,6 +27,8 @@ function App() {
       <Brand />
       <Contact/>
       <Questions/>
+      <WorkSteps />
+      <Review />
       <Footer />
     </div>
   );
