@@ -160,7 +160,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
     position: relative;
-
+   
     &:hover {
       transform: translateY(-12px) scale(1.02);
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -176,6 +176,40 @@
       .bestseller__hit-badge {
         transform: rotate(-45deg) scale(1.1);
       }
+    }
+  }
+
+  &__product-card1 {
+    max-width: 362px;
+    height: 380px;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+    // background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    position: relative;
+   
+    &:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      border-color: #e94250;
+      
+      .bestseller__product-button {
+        background-color: #e94250;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(233, 66, 80, 0.4);
+      }
+      
+      .bestseller__hit-badge {
+        transform: rotate(-45deg) scale(1.1);
+      }
+    }
+    @media (max-width: 486px) {
+      width: 100%;
+      margin: auto;
     }
   }
 
@@ -278,14 +312,76 @@
       height: 17px;
       top: 34px;
       left: 33px;
-      font-family: 'Open Sans', Helvetica;
       font-weight: 800;
       color: white;
-      font-size: 11px;
-      text-align: center;
+      font-size: 14px;
       letter-spacing: 0.5px;
       line-height: 13.8px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__hit-badge2 {
+    position: absolute;
+    width: 46px;
+    height: 20px;
+    top: 47px;
+    left: 0px;
+    background-color: #2992D9;
+    z-index: 10;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+      display: flex;
+      font-size: 8px;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(233, 66, 80, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-text2 {
+      position: absolute;
+      width: 26px;
+      height: 17px;
+      top: 34px;
+      left: 33px;
+      font-family: 'Open Sans', Helvetica;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 13.8px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__hit-badge1 {
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    top: 20px;
+    color: white;
+    background: #FF0000;
+    left: 0px;
+    z-index: 10;
+       display: flex;
+      font-size: 8px;
+      justify-content: center;
+         border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+      align-items: center;
+    box-shadow: 0 4px 15px rgba(233, 66, 80, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-text1 {
+      position: absolute;
+      width: 26px;
+      height: 17px;
+      top: 34px;
+      left: 33px;
+      font-family: 'Open Sans', Helvetica;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 0.5px;
+      line-height: 13.8px;
+     
     }
   }
 

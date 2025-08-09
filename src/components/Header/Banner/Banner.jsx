@@ -7,8 +7,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import banner1 from '../../../assets/MirbekImages/Banner1.svg'
-import bgBanner from '../../../assets/MirbekImages/BgBanner.png'
+// import banner1 from '../../../assets/MirbekImages/Banner1.svg'
+// import bgBanner from '../../../assets/MirbekImages/BgBanner.png'
 import DownButtons from './DownButtons/DownButtons.jsx'
 
 
